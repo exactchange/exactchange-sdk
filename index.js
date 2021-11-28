@@ -1,7 +1,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.0.7'
+    version: '0.0.8'
   },
   Tabs: ({
     rootElement,
@@ -81,6 +81,42 @@ const DuskSDK = window.DuskSDK = {
       onClose,
       onRender,
       onLoad
+    };
+  },
+  Responsive: ({ frame } = { frame: null }) => {
+    const onResize = () => {
+      const isFocused = Boolean(
+        document.querySelectorAll('input:focus').length
+      );
+
+      setTimeout(() => {
+        if (frame) {
+          frame.setAttribute('style', `max-height: ${window.innerHeight}px`);
+        }
+
+        if (!isFocused) {
+          window.scrollTo(0, 0);
+        }
+      }, 500);
+    };
+
+    const isMobile = (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    );
+
+    if (isMobile) {
+      document.addEventListener('touchmove', event => {
+        if (event.scale !== 1) {
+          event.preventDefault();
+        }
+      }, { passive: false });
+
+      window.onresize = onResize;
+    }
+
+    return {
+      isMobile,
+      onResize
     };
   }
 };
