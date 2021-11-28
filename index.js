@@ -1,7 +1,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.0.2'
+    version: '0.0.3'
   },
   Tabs: ({
     rootElement,
@@ -68,6 +68,9 @@ const DuskSDK = window.DuskSDK = {
       }, 300);
     };
 
+    const tabButton = document.getElementById('tab-button');
+
+    tabButton.onclick = onOpen;
     requestAnimationFrame(onLoad);
 
     return {
