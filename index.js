@@ -1,7 +1,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.0.6'
+    version: '0.0.7'
   },
   Tabs: ({
     rootElement,
@@ -19,10 +19,12 @@ const DuskSDK = window.DuskSDK = {
     element.innerHTML = `
       <button id="tab-button">☰</button>
       <ul id="tabs">
-        <li>
-          <span class="icon"></span>
-          <a href="/">${orgTab.name}</a>
-        </li>
+        ${!orgTab ? '' : `
+          <li>
+            <span class="icon"></span>
+            <a href="/">${orgTab.name}</a>
+          </li>
+        `}
         <li>
           <span class="icon"></span>
           <a href="${rootPath}">
