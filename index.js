@@ -1,10 +1,11 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.0.4'
+    version: '0.0.5'
   },
   Tabs: ({
     rootElement,
+    rootPath,
     onRender,
     onLoad,
     orgTab,
@@ -24,7 +25,7 @@ const DuskSDK = window.DuskSDK = {
         </li>
         <li>
           <span class="icon"></span>
-          <a href="/payphone/?channel=#general">
+          <a href="${rootPath}/?channel=#general">
             ${appTab.name}
             ${!devStatus ? '' : `
               <span class="app-label ${devStatus}">${devStatus}</span>
