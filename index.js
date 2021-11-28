@@ -1,7 +1,7 @@
-module.exports = {
+const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.0.1'
+    version: '0.0.2'
   },
   Tabs: ({
     rootElement,
