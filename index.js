@@ -1,7 +1,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.1.1'
+    version: '0.1.2'
   },
   Browser: () => {
     // Render stylesheet
@@ -478,7 +478,7 @@ const DuskSDK = window.DuskSDK = {
       `)
     );
 
-    document.head.insertBefore(css, document.head.children[1]);
+    document.head.appendChild(css);
   },
   Tabs: ({
     rootElement,
@@ -486,9 +486,10 @@ const DuskSDK = window.DuskSDK = {
     onRender,
     onLoad,
     orgTab,
-    appTab,
     appTab: {
-      devStatus
+      name,
+      devStatus,
+      iconPath
     }
   }) => {
     const element = document.createElement('div');
@@ -498,14 +499,14 @@ const DuskSDK = window.DuskSDK = {
       <ul id="tabs">
         ${!orgTab ? '' : `
           <li>
-            <span class="icon"></span>
+            <span class="icon" style="background: url(${orgTab.iconPath}) center center / cover no-repeat;"></span>
             <a href="/">${orgTab.name}</a>
           </li>
         `}
         <li>
-          <span class="icon"></span>
+        <span class="icon" style="background: url(${iconPath}) center center / cover no-repeat;"></span>
           <a href="${rootPath}">
-            ${appTab.name}
+            ${name}
             ${!devStatus ? '' : `
               <span class="app-label ${devStatus}">${devStatus}</span>
             `}
