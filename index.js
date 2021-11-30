@@ -1,7 +1,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.1.5'
+    version: '0.1.7'
   },
   Browser: () => {
     // Render stylesheet
@@ -61,7 +61,7 @@ const DuskSDK = window.DuskSDK = {
           box-sizing: border-box;
         }
 
-        html {
+        html, body {
           background: #19181b;
         }
 
@@ -495,6 +495,8 @@ const DuskSDK = window.DuskSDK = {
       iconPath
     }
   }) => {
+    document.getElementById('tabs').remove();
+
     const element = document.createElement('div');
 
     element.innerHTML = `
