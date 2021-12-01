@@ -1,7 +1,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.1.7'
+    version: '0.1.8'
   },
   Browser: () => {
     // Render stylesheet
@@ -334,6 +334,15 @@ const DuskSDK = window.DuskSDK = {
           align-items: center;
           justify-content: start;
           height: 4rem;
+        }
+
+        #tabs > li.category {
+          color: #666;
+          font-size: .5em;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          height: 2rem;
         }
 
         #tabs > li.active {
