@@ -1,7 +1,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.2.1'
+    version: '0.2.2'
   },
   Browser: () => {
     // Render stylesheet
@@ -398,6 +398,12 @@ const DuskSDK = window.DuskSDK = {
         #tabs > li:first-of-type > a,
         #tabs > li:nth-of-type(2) > a {
           font-weight: 600;
+        }
+
+        #tabs > li > a > span.new-tab {
+          display: inline-block;
+          transform: rotateX(180deg);
+          margin-left: .25em;
         }
 
         #tabs > li > a > span.app-label {
