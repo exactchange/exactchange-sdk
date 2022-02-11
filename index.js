@@ -1,7 +1,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.2.6'
+    version: '0.2.7'
   },
   Browser: () => {
     // Render stylesheet
@@ -67,7 +67,7 @@ const DuskSDK = window.DuskSDK = {
           margin: 0;
           min-width: 100vw;
           min-height: 100vh;
-          font: 400 normal 18px "Raleway", sans-serif;
+          font: 400 normal 18px "Manrope", sans-serif;
           color: rgb(10, 20, 25);
           overflow: hidden;
 
@@ -236,7 +236,7 @@ const DuskSDK = window.DuskSDK = {
 
         #content > input {
           background: #111;
-          font: 400 normal 14px "Raleway", sans-serif;
+          font: 400 normal 14px "Manrope", sans-serif;
           width: 400px;
           max-width: 90%;
           height: 28px;
@@ -318,7 +318,7 @@ const DuskSDK = window.DuskSDK = {
           list-style: none;
           margin: 0;
           padding: 0;
-          font: 800 normal 1em "Raleway", sans-serif;
+          font: 800 normal 1em "Manrope", sans-serif;
           transition: transform .5s ease;
           overflow-y: auto;
           z-index: 900;
