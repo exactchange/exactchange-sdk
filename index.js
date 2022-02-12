@@ -1,7 +1,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.2.8'
+    version: '0.2.9'
   },
   Browser: () => {
     // Render stylesheet
@@ -372,11 +372,6 @@ const DuskSDK = window.DuskSDK = {
         #tabs > li:first-of-type {
           background: rgba(0, 0, 0, 0.1);
           margin: 0;
-          opacity: 1;
-        }
-
-        #tabs > li:first-of-type:hover {
-          background: transparent;
           opacity: 1;
         }
 
