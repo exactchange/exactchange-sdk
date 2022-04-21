@@ -1,9 +1,17 @@
+/* eslint-disable no-magic-numbers */
+
+// eslint-disable-next-line no-unused-vars
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.2.9'
+    version: '0.3.4'
   },
   Browser: () => {
+    const isHomeScreenApp = (
+      window.navigator.standalone ||
+      window.matchMedia('(display-mode: standalone)').matches
+    );
+
     // Render stylesheet
 
     const css = document.createElement('style');
@@ -182,7 +190,6 @@ const DuskSDK = window.DuskSDK = {
           color: white;
           background: black;
           box-sizing: border-box;
-          opacity: 0;
           top: -100px;
           left: 230px;
           right: 10px;
@@ -199,8 +206,6 @@ const DuskSDK = window.DuskSDK = {
 
         #notification.show {
           top: 10px;
-          opacity: 1;
-          animation: hide .5s 4s forwards;
         }
 
         #notification.error {
@@ -497,6 +502,7 @@ const DuskSDK = window.DuskSDK = {
 
           #tabs.open {
             transform: translate3d(0, 0, 0);
+            padding: 0 0 ${isHomeScreenApp ? '0' : '120px'};
           }
 
           #tab-button {
@@ -618,6 +624,8 @@ const DuskSDK = window.DuskSDK = {
       );
 
       setTimeout(() => {
+        document.body.height = window.innerHeight;
+
         if (frame) {
           frame.setAttribute('style', `max-height: ${window.innerHeight}px`);
         }
@@ -640,6 +648,8 @@ const DuskSDK = window.DuskSDK = {
       }, { passive: false });
 
       window.onresize = onResize;
+
+      onResize();
     }
 
     return {
