@@ -4,7 +4,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.3.5'
+    version: '0.3.6'
   },
   Browser: () => {
     const isHomeScreenApp = (
@@ -326,7 +326,7 @@ const DuskSDK = window.DuskSDK = {
           font: 800 normal 1em "Manrope", sans-serif;
           transition: transform .5s ease;
           overflow-y: auto;
-          z-index: 900;
+          z-index: 700;
           scrollbar-width: thin;
           scrollbar-color: #8c8c8d black;
         }
@@ -468,7 +468,7 @@ const DuskSDK = window.DuskSDK = {
           box-shadow: 0 0 1rem black;
           transition: left .5s ease;
           -webkit-tap-highlight-color: transparent;
-          z-index: 950;
+          z-index: 750;
         }
 
         #tab-button.open {
