@@ -4,7 +4,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.3.7'
+    version: '0.3.8'
   },
   Browser: () => {
     const isHomeScreenApp = (
@@ -443,7 +443,7 @@ const DuskSDK = window.DuskSDK = {
         }
 
         #tabs > li > a > span.app-label.dev {
-          background: #dda02f;
+          background: #ddca2f;
         }
 
         #tabs > li > a > span.app-label.alpha {
