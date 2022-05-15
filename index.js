@@ -4,7 +4,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.3.9'
+    version: '0.4.0'
   },
   Browser: () => {
     const isHomeScreenApp = (
@@ -349,7 +349,8 @@ const DuskSDK = window.DuskSDK = {
           background: transparent;
         }
 
-        #tabs + * {
+        #content,
+        #post {
           margin-left: 220px;
         }
 
@@ -509,7 +510,8 @@ const DuskSDK = window.DuskSDK = {
             display: block;
           }
 
-          #tabs + * {
+          #content,
+          #post {
             margin-left: auto;
             width: 100%;
           }
