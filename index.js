@@ -4,7 +4,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.4.0'
+    version: '0.4.4'
   },
   Browser: () => {
     const isHomeScreenApp = (
@@ -198,6 +198,9 @@ const DuskSDK = window.DuskSDK = {
           width: calc(100% - 240px);
           height: 50px;
           line-height: 50px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
           font-size: 1em;
           text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
           z-index: 1000;
@@ -252,6 +255,35 @@ const DuskSDK = window.DuskSDK = {
           align-self: center;
           outline: none;
         }
+
+        #loading {
+          position: fixed;
+          min-width: 100vw;
+          min-height: 100vh;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(255, 255, 255, .5);
+          display: none;
+          z-index: 600;
+        }
+
+        #loading.show {
+          display: flex;
+        }
+
+        #loader {
+          background: white;
+          max-width: 8rem;
+          max-height: 4rem;
+          line-height: 4rem;
+          border-radius: 1rem;
+          color: black;
+          text-align: center;
+          font-weight: 800;
+        }
+
 
         #apps {
           list-style: none;
@@ -458,8 +490,8 @@ const DuskSDK = window.DuskSDK = {
         #tab-button {
           display: none;
           position: fixed;
-          width: 3rem;
-          height: 3rem;
+          width: 2.75rem;
+          height: 2.75rem;
           margin: 0.5rem;
           padding: 0;
           background: black;
@@ -475,7 +507,7 @@ const DuskSDK = window.DuskSDK = {
         #tab-button.open {
           background: transparent;
           box-shadow: none;
-          left: 155px;
+          left: calc(220px - 3.625rem);
           opacity: .5;
         }
 
@@ -532,6 +564,23 @@ const DuskSDK = window.DuskSDK = {
         }
       `)
     );
+
+    // Instantiate loader
+
+    const content = document.getElementById('content');
+
+    if (content) {
+      const loading = document.createElement('aside');
+
+      loading.setAttribute('id', 'loading');
+      loading.setAttribute('class', 'flex center');
+
+      loading.innerHTML = (
+        `<div id="loader" class="flex center">Loading...</div>`
+      );
+
+      content.insertBefore(loading, content.firstElementChild);
+    }
 
     document.head.insertBefore(css, document.head.children[1]);
   },
@@ -658,5 +707,21 @@ const DuskSDK = window.DuskSDK = {
       isMobile,
       onResize
     };
+  },
+  system: {
+    onLoadStart: () => {
+      const loading = document.getElementById('loading');
+
+      if (loading) {
+        loading.setAttribute('class', 'flex center show');
+      }
+    },
+    onLoadEnd: () => {
+      const loading = document.getElementById('loading');
+
+      if (loading) {
+        loading.setAttribute('class', 'flex center');
+      }
+    }
   }
 };
