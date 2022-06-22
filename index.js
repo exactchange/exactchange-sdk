@@ -4,7 +4,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.4.4'
+    version: '0.4.6'
   },
   Browser: () => {
     const isHomeScreenApp = (
@@ -476,7 +476,9 @@ const DuskSDK = window.DuskSDK = {
         }
 
         #tabs > li > a > span.app-label.dev {
-          background: #e3cc50;
+          background: #deeb50;
+          font-weight: 500;
+          line-height: 1em;
         }
 
         #tabs > li > a > span.app-label.alpha {
@@ -490,9 +492,9 @@ const DuskSDK = window.DuskSDK = {
         #tab-button {
           display: none;
           position: fixed;
-          width: 2.75rem;
-          height: 2.75rem;
-          margin: 0.5rem;
+          width: 3.5rem;
+          height: 3.5rem;
+          margin: .5rem;
           padding: 0;
           background: black;
           color: white;
@@ -507,7 +509,9 @@ const DuskSDK = window.DuskSDK = {
         #tab-button.open {
           background: transparent;
           box-shadow: none;
-          left: calc(220px - 3.625rem);
+          margin: 0;
+          left: calc(220px - 3.5rem);
+          top: 2px;
           opacity: .5;
         }
 
