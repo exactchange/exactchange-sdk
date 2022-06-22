@@ -4,7 +4,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.4.6'
+    version: '0.4.7'
   },
   Browser: () => {
     const isHomeScreenApp = (
@@ -350,17 +350,20 @@ const DuskSDK = window.DuskSDK = {
         #tabs {
           position: fixed;
           width: 220px;
-          height: 100vh;
-          background: #111;
-          list-style: none;
-          margin: 0;
-          padding: 0;
+          height: 100%;
+          max-height: calc(100% - 2rem);
+          transition: opacity .25s linear, transform .5s cubic-bezier(1, 0, 0, 1);
+          background: white;
+          color: black;
           font: 800 normal 1em "Manrope", sans-serif;
-          transition: transform .5s ease;
+          border-radius: 1rem;
+          list-style: none;
+          margin: 1rem;
+          padding: 0;
           overflow-y: auto;
-          z-index: 700;
           scrollbar-width: thin;
           scrollbar-color: #8c8c8d black;
+          z-index: 700;
         }
 
         #tabs::-webkit-scrollbar {
@@ -434,7 +437,7 @@ const DuskSDK = window.DuskSDK = {
         #tabs > li > a {
           display: flex;
           align-items: center;
-          color: white;
+          color: black;
           text-overflow: ellipsis;
           text-decoration: none;
           white-space: nowrap;
@@ -496,11 +499,12 @@ const DuskSDK = window.DuskSDK = {
           height: 3.5rem;
           margin: .5rem;
           padding: 0;
-          background: black;
-          color: white;
+          background: white;
+          color: black;
           appearance: none;
           border: none;
-          box-shadow: 0 0 1rem black;
+          border-radius: 1rem;
+          box-shadow: 0 0 3rem #29263a;
           transition: left .5s ease;
           -webkit-tap-highlight-color: transparent;
           z-index: 750;
@@ -510,8 +514,8 @@ const DuskSDK = window.DuskSDK = {
           background: transparent;
           box-shadow: none;
           margin: 0;
-          left: calc(220px - 3.5rem);
-          top: 2px;
+          left: calc(220px - 2.5rem);
+          top: 1rem;
           opacity: .5;
         }
 
