@@ -4,7 +4,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.4.7'
+    version: '0.4.9'
   },
   Browser: () => {
     const isHomeScreenApp = (
@@ -221,7 +221,7 @@ const DuskSDK = window.DuskSDK = {
           justify-content: flex-start;
           align-items: center;
           width: 100%;
-          max-width: calc(100% - 220px);
+          max-width: calc(100% - 16rem);
           height: 5rem;
           padding: 1rem;
           align-self: center;
@@ -349,14 +349,15 @@ const DuskSDK = window.DuskSDK = {
 
         #tabs {
           position: fixed;
-          width: 220px;
+          width: 15rem;
           height: 100%;
           max-height: calc(100% - 2rem);
           transition: opacity .25s linear, transform .5s cubic-bezier(1, 0, 0, 1);
-          background: white;
-          color: black;
+          background: black;
+          color: white;
           font: 800 normal 1em "Manrope", sans-serif;
           border-radius: 1rem;
+          box-shadow: 0 0 3rem black;
           list-style: none;
           margin: 1rem;
           padding: 0;
@@ -386,7 +387,7 @@ const DuskSDK = window.DuskSDK = {
 
         #content,
         #post {
-          margin-left: 220px;
+          padding-left: 16rem;
         }
 
         #tabs > li {
@@ -437,7 +438,7 @@ const DuskSDK = window.DuskSDK = {
         #tabs > li > a {
           display: flex;
           align-items: center;
-          color: black;
+          color: white;
           text-overflow: ellipsis;
           text-decoration: none;
           white-space: nowrap;
@@ -471,7 +472,7 @@ const DuskSDK = window.DuskSDK = {
           border-radius: 100vw;
           max-width: 2rem;
           margin-left: .3rem;
-          padding: .25rem;
+          padding: .16rem;
           line-height: 5px;
           font-size: .6em;
           text-align: center;
@@ -499,12 +500,12 @@ const DuskSDK = window.DuskSDK = {
           height: 3.5rem;
           margin: .5rem;
           padding: 0;
-          background: white;
-          color: black;
+          background: black;
+          color: white;
           appearance: none;
           border: none;
           border-radius: 1rem;
-          box-shadow: 0 0 3rem #29263a;
+          box-shadow: 0 0 3rem black;
           transition: left .5s ease;
           -webkit-tap-highlight-color: transparent;
           z-index: 750;
@@ -514,13 +515,13 @@ const DuskSDK = window.DuskSDK = {
           background: transparent;
           box-shadow: none;
           margin: 0;
-          left: calc(220px - 2.5rem);
+          left: calc(12.5rem);
           top: 1rem;
           opacity: .5;
         }
 
         #tabs.disobstruct {
-          transform: translate3d(-220px, 0, 0);
+          transform: translate3d(-16rem, 0, 0);
         }
 
         #tabs.disobstruct + * {
@@ -538,7 +539,7 @@ const DuskSDK = window.DuskSDK = {
 
         @media (max-width: 900px) {
           #tabs {
-            transform: translate3d(-220px, 0, 0);
+            transform: translate3d(-16rem, 0, 0);
           }
 
           #tabs.open {
