@@ -4,7 +4,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.4.9'
+    version: '0.5.0'
   },
   Browser: () => {
     const isHomeScreenApp = (
