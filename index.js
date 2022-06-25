@@ -4,7 +4,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.5.2'
+    version: '0.5.3'
   },
   Browser: () => {
     const isHomeScreenApp = (
@@ -421,7 +421,7 @@ const DuskSDK = window.DuskSDK = {
           min-width: 1.6rem;
           min-height: 1.6rem;
           border-radius: .5rem;
-          background-size: contain;
+          background-size: 107%;
           background-position: center center;
           background-repeat: no-repeat;
         }
