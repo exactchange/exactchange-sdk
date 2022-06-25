@@ -4,7 +4,7 @@
 const DuskSDK = window.DuskSDK = {
   package: {
     name: 'dusk-sdk',
-    version: '0.5.3'
+    version: '0.5.4'
   },
   Browser: () => {
     const isHomeScreenApp = (
@@ -471,17 +471,17 @@ const DuskSDK = window.DuskSDK = {
           border-radius: 100vw;
           max-width: 2rem;
           margin-left: .3rem;
-          padding: .16rem;
-          line-height: 5px;
+          padding: 0 .16rem;
+          line-height: 1rem;
+          height: 1rem;
           font-size: .6em;
           text-align: center;
           text-transform: capitalize;
         }
 
         #tabs > li > a > span.app-label.dev {
-          background: #deeb50;
+          background: #f1f742;
           font-weight: 500;
-          line-height: 1em;
         }
 
         #tabs > li > a > span.app-label.alpha {
