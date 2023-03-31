@@ -1,2 +1,3 @@
 # exactchange-sdk
-Cross-platform viewport utilities. 
+
+Cross-platform viewport utilities.

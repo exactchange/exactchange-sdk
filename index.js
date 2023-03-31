@@ -1,10 +1,14 @@
 /* eslint-disable no-magic-numbers */
 
-// eslint-disable-next-line no-unused-vars
-const DuskSDK = window.DuskSDK = {
+/**
+ * exactchangeSDK (xSDK)
+ * Cross-platform viewport utilities.
+ */
+
+window.xSDK = {
   package: {
-    name: 'dusk-sdk',
-    version: '0.5.5'
+    name: 'exactchange-sdk',
+    version: '0.5.6'
   },
   Browser: () => {
     const isHomeScreenApp = (
